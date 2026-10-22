@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMBSS Model United Nations | Harold M. Brathwaite Secondary School & BMUN</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Libre Baskerville, Playfair Display, Inter & JetBrains Mono for HMUN Collegiate Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#F9F8F4',
+                        alabaster: '#F2EFE9',
+                        stoneborder: '#E5E2DC',
+                        oxford: {
+                            950: '#060E1A',
+                            900: '#0B192C',
+                            800: '#162A45',
+                            700: '#1E3A5F'
+                        },
+                        crimson: {
+                            800: '#6E1419',
+                            700: '#8B1E24',
+                            600: '#A51C30'
+                        },
+                        brass: {
+                            600: '#856522',
+                            500: '#9E7B32',
+                            100: '#F5EFE0'
+                        },
+                        ink: '#18181B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        baskerville: ['Libre Baskerville', 'Georgia', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* HMUN-Inspired Collegiate Print-Editorial Styling */
+        body {
+            background-color: #F9F8F4;
+            color: #18181B;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E5E2DC;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .editorial-card:hover {
+            border-color: #0B192C;
+            box-shadow: 0 10px 25px -5px rgba(11, 25, 44, 0.06);
+        }
+        .double-rule-top {
+            border-top: 3px double #0B192C;
+        }
+        .crimson-rule-left {
+            border-left: 3px solid #8B1E24;
+        }
+        .navy-rule-left {
+            border-left: 3px solid #0B192C;
+        }
+        .page-section {
+            display: none;
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+        .page-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Clean Editorial Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2EFE9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0B192C;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B1E24;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-oxford-900 selection:text-white">
+
+    <!-- Top Institutional Dispatch Bar (HMUN Style) -->
+    <div class="bg-oxford-900 text-white border-b border-oxford-800 text-xs py-2.5 px-4 relative z-40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
+                <span class="font-mono text-[11px] uppercase tracking-widest px-2 py-0.5 bg-crimson-700 text-white font-semibold">
+                    Official Notice
+                </span>
+                <span class="text-slate-200 tracking-wide">
+                    Weekly Meetings: <strong class="text-white font-semibold">Every Monday During Lunch</strong> in <strong class="text-white underline decoration-brass-500 underline-offset-4">Rooms 301 & 302</strong>
+                </span>
+            </div>
+            <div class="flex items-center gap-4 font-mono text-[11px] text-slate-300">
+                <span>BMUN CONFERENCE: DATES TBD</span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-amber-200 font-medium transition flex items-center gap-1.5">
+                    <i class="fa-brands fa-instagram text-sm"></i> @hb_mun
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Collegiate Navigation Header -->
+    <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-stoneborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Crest & Institutional Title -->
+                <button onclick="navigateTo('home')" class="flex items-center gap-3.5 text-left group focus:outline-none">
+                    <div class="w-11 h-11 bg-oxford-900 text-white flex items-center justify-center border border-oxford-900 group-hover:bg-crimson-700 group-hover:border-crimson-700 transition">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="28" r="14" stroke="currentColor" stroke-width="2.5"/>
+                            <ellipse cx="32" cy="28" rx="7" ry="14" stroke="currentColor" stroke-width="2"/>
+                            <line x1="18" y1="28" x2="46" y2="28" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 26C14 40 22 48 32 52C42 48 50 40 50 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-oxford-900">HMBSS MUN</span>
+                            <span class="hidden sm:inline-block font-mono text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 bg-alabaster text-oxford-900 border border-stoneborder">BMUN</span>
+                        </div>
+                        <p class="text-[11px] font-mono uppercase tracking-wider text-slate-500 hidden sm:block">Harold M. Brathwaite Secondary School</p>
+                    </div>
+                </button>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <button onclick="navigateTo('home')" data-nav="home" class="nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-semibold transition text-oxford-900 border-b-2 border-crimson-700">
+                        Home
+                    </button>
+                    <button onclick="navigateTo('secretariat')" data-nav="secretariat" class="nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-medium text-slate-600 hover:text-oxford-900 border-b-2 border-transparent transition">
+                        The Secretariat
+                    </button>
+                    <button onclick="navigateTo('bmun')" data-nav="bmun" class="nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-medium text-slate-600 hover:text-oxford-900 border-b-2 border-transparent transition">
+                        Meetings & BMUN
+                    </button>
+                    <button onclick="navigateTo('training')" data-nav="training" class="nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-medium text-slate-600 hover:text-oxford-900 border-b-2 border-transparent transition">
+                        Delegate Training
+                    </button>
+                    <button onclick="navigateTo('contact')" data-nav="contact" class="nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-medium text-slate-600 hover:text-oxford-900 border-b-2 border-transparent transition">
+                        Join & Contact
+                    </button>
+                </nav>
+
+                <!-- Desktop Action CTA -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center border border-stoneborder text-oxford-900 hover:bg-oxford-900 hover:text-white transition" title="Follow @hb_mun on Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <button onclick="navigateTo('contact')" class="bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold px-5 py-2.5 transition flex items-center gap-2">
+                        <span>Join Delegation</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden items-center gap-2">
+                    <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center border border-stoneborder text-oxford-900">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-9 h-9 flex items-center justify-center border border-stoneborder text-oxford-900 focus:outline-none">
+                        <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-stoneborder px-4 pt-2 pb-5 space-y-1">
+            <button onclick="navigateTo('home'); toggleMobileMenu();" data-nav-mobile="home" class="w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-semibold flex items-center justify-between bg-alabaster text-oxford-900 border-l-4 border-crimson-700">
+                <span>01. Home</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+            <button onclick="navigateTo('secretariat'); toggleMobileMenu();" data-nav-mobile="secretariat" class="w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-medium flex items-center justify-between text-slate-700 hover:bg-alabaster">
+                <span>02. The Secretariat (15)</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+            <button onclick="navigateTo('bmun'); toggleMobileMenu();" data-nav-mobile="bmun" class="w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-medium flex items-center justify-between text-slate-700 hover:bg-alabaster">
+                <span>03. Meetings & BMUN</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+            <button onclick="navigateTo('training'); toggleMobileMenu();" data-nav-mobile="training" class="w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-medium flex items-center justify-between text-slate-700 hover:bg-alabaster">
+                <span>04. Delegate Training (8 Guides)</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+            <button onclick="navigateTo('contact'); toggleMobileMenu();" data-nav-mobile="contact" class="w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-medium flex items-center justify-between text-slate-700 hover:bg-alabaster">
+                <span>05. Join & Contact</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN MULTI-PAGE CONTENT CONTAINER          -->
+    <!-- ========================================== -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME (HMUN EDITORIAL FRONT PAGE)   -->
+        <!-- ========================================== -->
+        <section id="page-home" class="page-section active">
+            <!-- Hero Section with Secretariat Group Picture -->
+            <div class="bg-white border-b border-stoneborder py-12 lg:py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <!-- Left Column: Formal HMUN-Style Typography -->
+                        <div class="lg:col-span-6">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-alabaster border border-stoneborder text-oxford-900 font-mono text-[11px] uppercase tracking-widest mb-6">
+                                <span class="w-2 h-2 bg-crimson-700"></span>
+                                Brampton, Ontario • Rooms 301 & 302
+                            </div>
+                            <h1 class="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold text-oxford-900 leading-[1.12] tracking-tight mb-6">
+                                Diplomacy, Debate, &amp; Global Leadership.
+                            </h1>
+                            <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-6 font-normal">
+                                Welcome to the official portal of the <strong class="text-oxford-900 font-semibold">Harold M. Brathwaite Secondary School Model United Nations</strong> delegation and our school-hosted conference, <strong class="text-crimson-700 font-semibold">BMUN</strong>.
+                            </p>
+                            <div class="bg-ivory border border-stoneborder p-4 mb-8 navy-rule-left">
+                                <p class="font-mono text-xs uppercase tracking-wider text-oxford-900 font-semibold mb-1">
+                                    <i class="fa-regular fa-clock mr-1.5 text-crimson-700"></i> Weekly Delegation Schedule
+                                </p>
+                                <p class="text-sm text-slate-700">
+                                    We hold our weekly meetings <strong class="text-oxford-900">every Monday during Lunch</strong> in <strong class="text-oxford-900">Rooms 301 &amp; 302</strong>. New and experienced delegates from all grades are welcome.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3.5">
+                                <button onclick="navigateTo('training')" class="bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold px-6 py-3.5 transition flex items-center gap-2">
+                                    <span>Delegate Training Guides (8)</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                                <button onclick="navigateTo('secretariat')" class="bg-white hover:bg-alabaster text-oxford-900 border border-oxford-900 font-mono text-xs uppercase tracking-widest font-semibold px-6 py-3.5 transition">
+                                    Meet The Secretariat
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Framed Group Photograph (KAW_8926.jpg) -->
+                        <div class="lg:col-span-6">
+                            <div class="bg-ivory p-3 sm:p-4 border border-stoneborder shadow-sm">
+                                <div class="relative overflow-hidden border border-stoneborder bg-oxford-900">
+                                    <img src="KAW_8926.jpg"
+                                         alt="The HMBSS Model United Nations Secretariat Group Photograph"
+                                         class="w-full h-auto object-cover block"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/900x600/0B192C/FFFFFF?text=HMBSS+Model+UN+Secretariat';">
+                                </div>
+                                <div class="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs border-t border-stoneborder mt-3">
+                                    <p class="font-serif italic text-slate-800 text-sm">
+                                        The 2026–2027 HMBSS Model United Nations Secretariat
+                                    </p>
+                                    <span class="font-mono text-[11px] uppercase tracking-wider text-crimson-700 font-semibold">
+                                        15 Executive Members
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Institutional Key Metrics Strip -->
+                    <div class="mt-14 pt-10 border-t border-stoneborder grid grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="border-l-2 border-oxford-900 pl-4">
+                            <p class="font-mono text-[11px] uppercase tracking-widest text-slate-500">Weekly Sessions</p>
+                            <p class="font-serif font-bold text-xl sm:text-2xl text-oxford-900 mt-1">Mondays at Lunch</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Open to Grades 9–12</p>
+                        </div>
+                        <div class="border-l-2 border-crimson-700 pl-4">
+                            <p class="font-mono text-[11px] uppercase tracking-widest text-slate-500">Meeting Rooms</p>
+                            <p class="font-serif font-bold text-xl sm:text-2xl text-oxford-900 mt-1">Rooms 301 &amp; 302</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Harold M. Brathwaite SS</p>
+                        </div>
+                        <div class="border-l-2 border-oxford-900 pl-4">
+                            <p class="font-mono text-[11px] uppercase tracking-widest text-slate-500">Leadership</p>
+                            <p class="font-serif font-bold text-xl sm:text-2xl text-oxford-900 mt-1">15 Executives</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Across 6 Departments</p>
+                        </div>
+                        <div class="border-l-2 border-crimson-700 pl-4">
+                            <p class="font-mono text-[11px] uppercase tracking-widest text-slate-500">Hosted Conference</p>
+                            <p class="font-serif font-bold text-xl sm:text-2xl text-oxford-900 mt-1">BMUN</p>
+                            <p class="text-xs text-crimson-700 font-medium mt-0.5">Conference Dates TBD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Letter from the Secretariat & Institutional Ledger (HMUN Layout) -->
+            <div class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-stoneborder">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left 7 Cols: Welcome Letter -->
+                    <div class="lg:col-span-7">
+                        <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                            Welcome Address
+                        </p>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oxford-900 mb-6">
+                            A Message from the Secretariat
+                        </h2>
+                        <div class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed font-baskerville">
+                            <p>
+                                Esteemed Delegates, Faculty Advisors, and Fellow Brathwaite Students,
+                            </p>
+                            <p>
+                                It is our distinct privilege to welcome you to the Harold M. Brathwaite Secondary School Model United Nations program. Model UN at HMBSS is built on the belief that students should not merely observe international affairs, but actively engage with the complexities of global diplomacy, international law, and multilateral negotiation.
+                            </p>
+                            <p>
+                                Every Monday during lunch in Rooms 301 and 302, our members gather to refine their public speaking, master parliamentary procedure, and debate pressing global issues. Alongside preparing our school delegation for external conferences, our 15-member Secretariat is hard at work organizing our own conference, <strong>Brathwaite Model United Nations (BMUN)</strong>.
+                            </p>
+                            <p>
+                                Whether you are stepping up to the podium for your very first speech or drafting complex crisis directives, you have a place in our delegation.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-stoneborder flex flex-wrap items-center gap-8">
+                            <div>
+                                <p class="font-serif font-bold text-lg text-oxford-900">Samar</p>
+                                <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Secretary-General</p>
+                            </div>
+                            <div>
+                                <p class="font-serif font-bold text-lg text-oxford-900">Gurkhushi &amp; Armaan</p>
+                                <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Deputy Secretaries-General</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right 5 Cols: Structured Institutional Ledger -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white border border-stoneborder p-6 sm:p-8 double-rule-top">
+                            <div class="flex items-center justify-between pb-4 mb-6 border-b border-stoneborder">
+                                <h3 class="font-serif font-bold text-xl text-oxford-900">Program At A Glance</h3>
+                                <span class="font-mono text-[11px] uppercase tracking-widest px-2.5 py-0.5 bg-alabaster text-oxford-900 border border-stoneborder">
+                                    2026–2027
+                                </span>
+                            </div>
+
+                            <dl class="divide-y divide-stoneborder text-sm">
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Institution</dt>
+                                    <dd class="font-semibold text-oxford-900 text-right">Harold M. Brathwaite SS</dd>
+                                </div>
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Meeting Time</dt>
+                                    <dd class="font-semibold text-crimson-700 text-right">Every Monday at Lunch</dd>
+                                </div>
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Meeting Location</dt>
+                                    <dd class="font-semibold text-oxford-900 text-right">Rooms 301 &amp; 302</dd>
+                                </div>
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Hosted Conference</dt>
+                                    <dd class="font-semibold text-oxford-900 text-right">BMUN (Dates TBD)</dd>
+                                </div>
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Training Curriculum</dt>
+                                    <dd class="font-semibold text-oxford-900 text-right">8 Official Modules</dd>
+                                </div>
+                                <div class="py-3.5 flex justify-between gap-4">
+                                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Official Instagram</dt>
+                                    <dd class="font-semibold text-right">
+                                        <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="text-crimson-700 hover:underline">@hb_mun</a>
+                                    </dd>
+                                </div>
+                            </dl>
+
+                            <div class="mt-6 pt-4 border-t border-stoneborder">
+                                <button onclick="navigateTo('bmun')" class="w-full bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold py-3 transition">
+                                    View Meetings &amp; BMUN Details →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Core Pillars Section (School Delegation + BMUN Conference) -->
+            <div class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12">
+                    <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                        Dual Program Structure
+                    </p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oxford-900">
+                        The School Delegation &amp; BMUN
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Our organization operates both as Harold M. Brathwaite’s competitive Model UN team and as the host Secretariat for Brathwaite Model United Nations.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Pillar I: HMBSS School Team -->
+                    <div class="editorial-card p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-4 mb-6 border-b border-stoneborder">
+                                <span class="font-mono text-xs uppercase tracking-widest font-semibold text-oxford-900">
+                                    Pillar I • School Delegation
+                                </span>
+                                <span class="font-mono text-xs text-crimson-700 font-semibold">
+                                    Mondays at Lunch • Rms 301 &amp; 302
+                                </span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-oxford-900 mb-4">
+                                HMBSS Model UN Team
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+                                Every Monday during lunch in Rooms 301 and 302, delegates come together for structured training sessions, practice simulations, and foreign policy workshops led by our USG of Training team. We prepare Brathwaite students of all experience levels to excel at regional and high school conferences.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">01</span>
+                                    <span><strong>Weekly Lunchtime Sessions:</strong> Held every Monday during lunch in Rooms 301 &amp; 302.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">02</span>
+                                    <span><strong>Comprehensive Curriculum:</strong> 8 official HMBSS training guides covering RoP, Speeches, Double Del, Foreign Policy, Crisis, Position Papers, and Resolutions.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">03</span>
+                                    <span><strong>External Conferences:</strong> Travel and compete as a unified school delegation across the GTA.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-5 border-t border-stoneborder flex items-center justify-between">
+                            <button onclick="navigateTo('training')" class="font-mono text-xs uppercase tracking-widest font-semibold text-oxford-900 hover:text-crimson-700 transition">
+                                Access Training Library →
+                            </button>
+                            <button onclick="navigateTo('contact')" class="px-4 py-2 bg-alabaster hover:bg-oxford-900 text-oxford-900 hover:text-white font-mono text-xs uppercase tracking-wider transition">
+                                Join the Team
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pillar II: BMUN Hosted Conference -->
+                    <div class="editorial-card p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-4 mb-6 border-b border-stoneborder">
+                                <span class="font-mono text-xs uppercase tracking-widest font-semibold text-oxford-900">
+                                    Pillar II • Hosted Conference
+                                </span>
+                                <span class="font-mono text-xs px-2.5 py-0.5 bg-brass-100 text-brass-600 border border-brass-500/30 font-semibold">
+                                    Dates TBD
+                                </span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-oxford-900 mb-4">
+                                Brathwaite Model UN (BMUN)
+                            </h3>
+                            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+                                Organized by the HMBSS Secretariat, <strong>BMUN</strong> is our flagship school-hosted conference welcoming delegates for rigorous parliamentary debate, dynamic crisis updates, and diplomacy. Official conference dates and committee background guides will be announced soon.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">01</span>
+                                    <span><strong>Diverse Committee Slate:</strong> Featuring General Assemblies, Specialized Agencies, and Crisis Committees.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">02</span>
+                                    <span><strong>Dedicated Secretariat:</strong> Directed by our 15-member Executive Team across 6 specialized departments.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-mono text-xs font-bold text-crimson-700 mt-0.5">03</span>
+                                    <span><strong>Delegate Recognition:</strong> Best Delegate gavels, Outstanding Delegate, Honourable Mention, and Best Position Paper awards.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-5 border-t border-stoneborder flex items-center justify-between">
+                            <button onclick="navigateTo('bmun')" class="font-mono text-xs uppercase tracking-widest font-semibold text-oxford-900 hover:text-crimson-700 transition">
+                                Explore BMUN Overview →
+                            </button>
+                            <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-alabaster hover:bg-crimson-700 text-oxford-900 hover:text-white font-mono text-xs uppercase tracking-wider transition">
+                                @hb_mun Updates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: THE SECRETARIAT (15 EXEC ROSTER)   -->
+        <!-- ========================================== -->
+        <section id="page-secretariat" class="page-section py-12 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Page Header -->
+                <div class="border-b border-stoneborder pb-8 mb-10">
+                    <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                        2026–2027 Executive Directory
+                    </p>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold text-oxford-900">The Secretariat</h1>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-3xl">
+                        Our 15-member Executive Team leads weekly Monday lunch meetings in Rooms 301 &amp; 302 and directs all operations for <strong class="text-oxford-900">BMUN</strong>. Filter by department or contact any member below via email or Instagram.
+                    </p>
+                </div>
+
+                <!-- Filter Bar & Search -->
+                <div class="bg-white border border-stoneborder p-4 mb-10 flex flex-col lg:flex-row items-center justify-between gap-4">
+                    <div class="flex flex-wrap items-center gap-1.5" id="secretariatFilters">
+                        <button onclick="filterSecretariat('ALL')" data-dept="ALL" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-semibold bg-oxford-900 text-white transition">
+                            All (15)
+                        </button>
+                        <button onclick="filterSecretariat('Senior Secretariat')" data-dept="Senior Secretariat" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Senior Secretariat (3)
+                        </button>
+                        <button onclick="filterSecretariat('Training')" data-dept="Training" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Training (3)
+                        </button>
+                        <button onclick="filterSecretariat('Administration')" data-dept="Administration" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Administration (3)
+                        </button>
+                        <button onclick="filterSecretariat('Marketing')" data-dept="Marketing" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Marketing (2)
+                        </button>
+                        <button onclick="filterSecretariat('Events')" data-dept="Events" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Events (3)
+                        </button>
+                        <button onclick="filterSecretariat('Equity')" data-dept="Equity" class="dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition">
+                            Equity (1)
+                        </button>
+                    </div>
+
+                    <div class="relative w-full lg:w-64">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input id="execSearchInput" oninput="renderSecretariat()" type="text" placeholder="Search name, role, @handle..." class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 pl-9 pr-4 py-2 text-sm text-oxford-900 placeholder-slate-400 focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- Secretariat Cards Grid -->
+                <div id="secretariatGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 3: MEETINGS & BMUN CONFERENCE HUB     -->
+        <!-- ========================================== -->
+        <section id="page-bmun" class="page-section py-12 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Part 1: Weekly Lunch Meetings -->
+                <div class="mb-16">
+                    <div class="border-b border-stoneborder pb-6 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                                HMBSS School Delegation
+                            </p>
+                            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-oxford-900">Weekly Lunch Meetings</h1>
+                        </div>
+                        <div class="bg-oxford-900 text-white px-4 py-2.5 font-mono text-xs uppercase tracking-widest font-semibold">
+                            Every Monday at Lunch • Rooms 301 &amp; 302
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-stoneborder p-6 sm:p-10 double-rule-top">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-8">
+                                <span class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold">
+                                    Unified Team Sessions
+                                </span>
+                                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-oxford-900 mt-1 mb-4">
+                                    Mondays During Lunch in Rooms 301 &amp; 302
+                                </h2>
+                                <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+                                    Our entire Model UN team meets <strong class="text-oxford-900">every Monday during lunch in Rooms 301 and 302</strong>. Sessions are designed so students can eat their lunch while participating in interactive training modules, mock debates, speech drills, and conference preparation led by our Secretariat.
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-stoneborder">
+                                    <div>
+                                        <p class="font-mono text-xs uppercase tracking-wider text-crimson-700 font-semibold">Curriculum</p>
+                                        <p class="text-xs text-slate-600 mt-1">Guided lessons on Rules of Procedure, Foreign Policy, Crisis, and Resolution Writing.</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-mono text-xs uppercase tracking-wider text-crimson-700 font-semibold">Practice Debates</p>
+                                        <p class="text-xs text-slate-600 mt-1">Live moderated and unmoderated caucus practice with constructive feedback from Execs.</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-mono text-xs uppercase tracking-wider text-crimson-700 font-semibold">Delegation Prep</p>
+                                        <p class="text-xs text-slate-600 mt-1">Position paper reviews, partner coordination, and country assignments for upcoming conferences.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-4 bg-ivory border border-stoneborder p-6">
+                                <h3 class="font-serif font-bold text-lg text-oxford-900 mb-3 pb-2 border-b border-stoneborder">
+                                    Meeting Logistics
+                                </h3>
+                                <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                                    <li class="flex justify-between">
+                                        <span class="font-mono text-xs uppercase text-slate-500">Day:</span>
+                                        <strong class="text-oxford-900">Every Monday</strong>
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="font-mono text-xs uppercase text-slate-500">Time:</span>
+                                        <strong class="text-crimson-700">During Lunch</strong>
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="font-mono text-xs uppercase text-slate-500">Rooms:</span>
+                                        <strong class="text-oxford-900">Rooms 301 &amp; 302</strong>
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="font-mono text-xs uppercase text-slate-500">Eligibility:</span>
+                                        <strong class="text-oxford-900">All Grades (No Exp. Needed)</strong>
+                                    </li>
+                                </ul>
+                                <button onclick="navigateTo('training')" class="mt-6 w-full bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold py-2.5 transition">
+                                    Browse Training Guides →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: BMUN (Brathwaite Model United Nations) Conference Hub -->
+                <div class="bg-white border border-stoneborder p-6 sm:p-10 double-rule-top">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-stoneborder">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-brass-100 border border-brass-500/40 text-brass-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
+                                <i class="fa-regular fa-calendar"></i> Official Conference Dates: To Be Decided (TBD)
+                            </div>
+                            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oxford-900">
+                                BMUN — Brathwaite Model United Nations
+                            </h2>
+                            <p class="text-slate-600 mt-2 text-sm sm:text-base max-w-2xl">
+                                Hosted at Harold M. Brathwaite Secondary School, BMUN brings together student delegates for a full day of committee sessions, crisis simulations, and diplomacy. Official dates and background guides will be released by the Secretariat.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+                            <button onclick="navigateTo('contact')" class="bg-crimson-700 hover:bg-oxford-900 text-white font-mono text-xs uppercase tracking-widest font-semibold px-5 py-3 transition">
+                                Inquire About BMUN
+                            </button>
+                            <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 bg-ivory hover:bg-alabaster text-oxford-900 border border-stoneborder font-mono text-xs uppercase tracking-widest font-semibold text-center transition">
+                                @hb_mun Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Planned BMUN Committee Divisions -->
+                    <div class="mt-8">
+                        <h3 class="font-mono text-xs uppercase tracking-widest text-slate-500 font-semibold mb-5">
+                            Planned BMUN Committee Organs
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-ivory p-6 border border-stoneborder flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="font-mono text-[11px] uppercase tracking-wider px-2 py-0.5 bg-white border border-stoneborder text-oxford-900 font-semibold">General Assemblies</span>
+                                        <span class="font-mono text-[11px] text-slate-500">Standard RoP</span>
+                                    </div>
+                                    <h4 class="font-serif text-xl font-bold text-oxford-900 mb-2">GA &amp; ECOSOC</h4>
+                                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                        Large-scale multilateral assemblies debating global security, economic policy, and humanitarian frameworks through comprehensive resolution drafting.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-stoneborder flex items-center justify-between font-mono text-[11px]">
+                                    <span class="text-brass-600">Topics: TBD</span>
+                                    <button onclick="openTrainingGuide('rop-101')" class="text-crimson-700 hover:underline font-semibold">RoP 101 Guide →</button>
+                                </div>
+                            </div>
+
+                            <div class="bg-ivory p-6 border border-stoneborder flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="font-mono text-[11px] uppercase tracking-wider px-2 py-0.5 bg-white border border-stoneborder text-oxford-900 font-semibold">Specialized</span>
+                                        <span class="font-mono text-[11px] text-slate-500">Intermediate</span>
+                                    </div>
+                                    <h4 class="font-serif text-xl font-bold text-oxford-900 mb-2">Specialized Agencies</h4>
+                                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                        Focused regional organizations, legal bodies, and historical councils tackling specialized mandates and policy challenges.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-stoneborder flex items-center justify-between font-mono text-[11px]">
+                                    <span class="text-brass-600">Topics: TBD</span>
+                                    <button onclick="openTrainingGuide('foreign-policy')" class="text-crimson-700 hover:underline font-semibold">Policy Guide →</button>
+                                </div>
+                            </div>
+
+                            <div class="bg-ivory p-6 border border-stoneborder flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="font-mono text-[11px] uppercase tracking-wider px-2 py-0.5 bg-white border border-stoneborder text-crimson-700 font-semibold">Crisis</span>
+                                        <span class="font-mono text-[11px] text-slate-500">Dynamic RoP</span>
+                                    </div>
+                                    <h4 class="font-serif text-xl font-bold text-oxford-900 mb-2">Crisis Cabinets</h4>
+                                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                        Small, fast-paced cabinets where delegates represent specific characters, utilizing personal portfolio powers, backroom crisis notes, and public directives.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-t border-stoneborder flex items-center justify-between font-mono text-[11px]">
+                                    <span class="text-brass-600">Topics: TBD</span>
+                                    <button onclick="openTrainingGuide('crisis-101')" class="text-crimson-700 hover:underline font-semibold">Crisis Guide →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: TRAINING HUB (8 OFFICIAL GUIDES)   -->
+        <!-- ========================================== -->
+        <section id="page-training" class="page-section py-12 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="border-b border-stoneborder pb-8 mb-12">
+                    <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                        Official HMBSS Curriculum
+                    </p>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold text-oxford-900">Delegate Training &amp; Resources</h1>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-3xl">
+                        Prepared by our <strong class="text-oxford-900">USG of Training Department (Eknoor, Yuvraj &amp; Milan)</strong> for our Monday lunch sessions in Rooms 301 &amp; 302. Select any of the 8 official HMBSS training guides below to read the full module.
+                    </p>
+                </div>
+
+                <!-- 8 Official Training Guides Grid -->
+                <div id="trainingGuidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Parliamentary Reference Table + Speech Timer -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Left 8 Cols: Parliamentary Points & Motions Table -->
+                    <div class="lg:col-span-8 bg-white border border-stoneborder p-6 sm:p-8 double-rule-top">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-6 border-b border-stoneborder">
+                            <div>
+                                <span class="font-mono text-[11px] uppercase tracking-widest text-crimson-700 font-semibold">Quick Reference</span>
+                                <h2 class="font-serif text-2xl font-bold text-oxford-900">Parliamentary Points &amp; Motions</h2>
+                            </div>
+                            <input id="ropSearchInput" oninput="filterRoPTable()" type="text" placeholder="Filter points or motions..." class="bg-ivory border border-stoneborder focus:border-oxford-900 px-3.5 py-2 text-xs sm:text-sm text-oxford-900 placeholder-slate-400 focus:outline-none">
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                                <thead>
+                                    <tr class="border-b-2 border-oxford-900 font-mono text-[11px] uppercase tracking-wider text-oxford-900 bg-alabaster">
+                                        <th class="py-3 px-3">Point / Motion</th>
+                                        <th class="py-3 px-3">Purpose &amp; Usage</th>
+                                        <th class="py-3 px-3 text-center">Interrupt?</th>
+                                        <th class="py-3 px-3 text-center">Vote Required</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ropTableBody" class="divide-y divide-stoneborder text-slate-700">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right 4 Cols: Speech & Caucus Practice Timer -->
+                    <div class="lg:col-span-4 bg-white border border-stoneborder p-6 sm:p-8 double-rule-top">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-[11px] uppercase tracking-widest text-crimson-700 font-semibold">
+                                Speaking Practice
+                            </span>
+                            <span class="font-mono text-[11px] text-slate-400">Rms 301 &amp; 302</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-oxford-900 mb-2">Delegate Speech Timer</h3>
+                        <p class="text-xs text-slate-600 mb-6">
+                            Time your 60-second Opening Speech or 45-second Moderated Caucus intervention.
+                        </p>
+
+                        <div class="bg-ivory border border-stoneborder p-6 text-center mb-5">
+                            <div id="timerDisplay" class="font-mono font-bold text-5xl text-oxford-900 tracking-tight">
+                                01:00
+                            </div>
+                            <p id="timerStatusLabel" class="font-mono text-[11px] uppercase tracking-wider text-slate-500 mt-2">
+                                Ready • 60s Speaking Time
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 mb-4 font-mono text-xs">
+                            <button onclick="setTimerPreset(45, '45s Mod Caucus')" class="py-2 bg-alabaster hover:bg-oxford-900 hover:text-white text-oxford-900 border border-stoneborder transition font-medium">
+                                45s
+                            </button>
+                            <button onclick="setTimerPreset(60, '60s Opening')" class="py-2 bg-alabaster hover:bg-oxford-900 hover:text-white text-oxford-900 border border-stoneborder transition font-medium">
+                                60s
+                            </button>
+                            <button onclick="setTimerPreset(90, '90s GSL Speech')" class="py-2 bg-alabaster hover:bg-oxford-900 hover:text-white text-oxford-900 border border-stoneborder transition font-medium">
+                                90s
+                            </button>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <button id="timerStartBtn" onclick="toggleTimer()" class="flex-1 bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold py-3 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play text-[10px]"></i>
+                                <span>Start</span>
+                            </button>
+                            <button onclick="resetTimer()" class="px-4 py-3 bg-ivory hover:bg-alabaster text-oxford-900 border border-stoneborder transition" title="Reset Timer">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PAGE 5: JOIN & CONTACT + FAQ               -->
+        <!-- ========================================== -->
+        <section id="page-contact" class="page-section py-12 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="border-b border-stoneborder pb-8 mb-12">
+                    <p class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-2">
+                        Membership &amp; Secretariat Inquiries
+                    </p>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold text-oxford-900">Join HMBSS MUN &amp; Contact Us</h1>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-3xl">
+                        Interested in joining our weekly Monday lunch meetings in Rooms 301 &amp; 302 or inquiring about <strong class="text-oxford-900">BMUN</strong>? Follow the steps below or send a direct message to our Secretariat.
+                    </p>
+                </div>
+
+                <!-- 3-Step Onboarding Strip -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                    <div class="editorial-card p-6 navy-rule-left">
+                        <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson-700">Step 01</span>
+                        <h3 class="font-serif font-bold text-xl text-oxford-900 mt-1 mb-2">Attend Monday Lunch</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Come to <strong class="text-oxford-900">Rooms 301 &amp; 302 every Monday during lunch</strong>. Bring your lunch, meet the team, and jump right into our weekly training activities.
+                        </p>
+                    </div>
+                    <div class="editorial-card p-6 crimson-rule-left">
+                        <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson-700">Step 02</span>
+                        <h3 class="font-serif font-bold text-xl text-oxford-900 mt-1 mb-2">Follow @hb_mun</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Follow our official Instagram <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="text-crimson-700 font-semibold hover:underline">@hb_mun</a> for weekly reminders, conference sign-up forms, and BMUN announcements.
+                        </p>
+                    </div>
+                    <div class="editorial-card p-6 navy-rule-left">
+                        <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson-700">Step 03</span>
+                        <h3 class="font-serif font-bold text-xl text-oxford-900 mt-1 mb-2">Contact the Secretariat</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Have questions about training, registration, or BMUN? Use our Secretariat Dispatch tool below to email any executive department directly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form & FAQ Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Left 6 Cols: Direct Secretariat Dispatch Form -->
+                    <div class="lg:col-span-6 bg-white border border-stoneborder p-6 sm:p-8 double-rule-top">
+                        <h2 class="font-serif text-2xl font-bold text-oxford-900 mb-2">Direct Secretariat Dispatch</h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-6">
+                            Select an Executive Department to route your email directly to the appropriate HMBSS MUN officers.
+                        </p>
+
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block font-mono text-[11px] uppercase tracking-wider text-slate-600 font-semibold mb-1.5">Your Name / School</label>
+                                <input id="senderName" type="text" required placeholder="e.g., Alex Sharma (Grade 10)" class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 px-4 py-2.5 text-sm text-oxford-900 placeholder-slate-400 focus:outline-none">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-slate-600 font-semibold mb-1.5">Your Email</label>
+                                    <input id="senderEmail" type="email" required placeholder="you@example.com" class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 px-4 py-2.5 text-sm text-oxford-900 placeholder-slate-400 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-slate-600 font-semibold mb-1.5">Department</label>
+                                    <select id="targetDeptSelect" onchange="updateRecipientPreview()" class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 px-3.5 py-2.5 text-sm text-oxford-900 focus:outline-none">
+                                        <option value="marjara.samardeep@gmail.com,gurkhushi10@gmail.com,armaan.grover1@gmail.com">Senior Secretariat (Samar, Gurkhushi, Armaan)</option>
+                                        <option value="eknoorkc24@gmail.com,yuvrajpuri0803@gmail.com,mr.manand2020@gmail.com">Training (Eknoor, Yuvraj, Milan)</option>
+                                        <option value="prabhnoor.birdi11@gmail.com,simarkkang11@gmail.com,Shivanluthra642@gmail.com">Administration (Prabhnoor, Simar, Shivan)</option>
+                                        <option value="banipahwa2011@gmail.com,sainabhutani@gmail.com">Marketing (Bani, Saina)</option>
+                                        <option value="s.dhiren.on@gmail.com,nidhihegde23@gmail.com">Events &amp; BMUN (Heshika, Dhiren, Nidhi)</option>
+                                        <option value="vmanchanda2010@gmail.com">Equity (Vansh)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block font-mono text-[11px] uppercase tracking-wider text-slate-600 font-semibold mb-1.5">Subject</label>
+                                <select id="inquirySubject" class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 px-3.5 py-2.5 text-sm text-oxford-900 focus:outline-none">
+                                    <option value="Joining HMBSS Model UN (Monday Lunch Meetings)">Joining HMBSS Model UN (Monday Lunch Meetings)</option>
+                                    <option value="BMUN Conference Inquiry">BMUN Conference Inquiry</option>
+                                    <option value="Delegate Training & Resources Question">Delegate Training &amp; Resources Question</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block font-mono text-[11px] uppercase tracking-wider text-slate-600 font-semibold mb-1.5">Message</label>
+                                <textarea id="senderMessage" rows="4" required placeholder="Write your message here..." class="w-full bg-ivory border border-stoneborder focus:border-oxford-900 p-4 text-sm text-oxford-900 placeholder-slate-400 focus:outline-none"></textarea>
+                            </div>
+
+                            <div class="bg-alabaster p-3 border border-stoneborder text-xs text-slate-600 flex items-center justify-between gap-2">
+                                <span class="truncate font-mono text-[11px]">To: <strong id="recipientPreviewText" class="text-oxford-900">marjara.samardeep@gmail.com (+2)</strong></span>
+                                <button type="button" onclick="copySelectedDeptEmails()" class="font-mono text-[11px] uppercase text-crimson-700 hover:underline shrink-0 font-semibold">Copy Emails</button>
+                            </div>
+
+                            <button type="submit" class="w-full bg-oxford-900 hover:bg-crimson-700 text-white font-mono text-xs uppercase tracking-widest font-semibold py-3.5 transition">
+                                Compose Email to Secretariat →
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right 6 Cols: FAQ Accordion -->
+                    <div class="lg:col-span-6">
+                        <h2 class="font-serif text-2xl font-bold text-oxford-900 mb-2">Frequently Asked Questions</h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-6">
+                            Key information regarding Monday lunch meetings, experience requirements, and BMUN.
+                        </p>
+
+                        <div id="faqContainer" class="space-y-3">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- TRAINING GUIDE READER MODAL (EDITORIAL)    -->
+    <!-- ========================================== -->
+    <div id="guideModal" class="fixed inset-0 z-50 hidden bg-oxford-950/70 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] border-2 border-oxford-900 shadow-2xl flex flex-col overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-5 sm:p-6 bg-oxford-900 text-white flex items-center justify-between gap-4">
+                <div>
+                    <span id="modalGuideBadge" class="font-mono text-[11px] uppercase tracking-widest text-amber-200 block mb-1">
+                        Training Module
+                    </span>
+                    <h3 id="modalGuideTitle" class="font-serif text-xl sm:text-2xl font-bold text-white">Guide Title</h3>
+                </div>
+                <button onclick="closeGuideModal()" class="w-9 h-9 bg-oxford-800 hover:bg-crimson-700 text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Content -->
+            <div id="modalGuideBody" class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-800 text-sm sm:text-base leading-relaxed bg-ivory">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 sm:p-5 bg-white border-t border-stoneborder flex flex-wrap items-center justify-between gap-3">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-slate-500">
+                    HMBSS Model UN Training Curriculum • Mondays at Lunch (Rms 301 &amp; 302)
+                </span>
+                <div class="flex items-center gap-3">
+                    <button onclick="copyCurrentGuideNotes()" class="px-4 py-2 bg-alabaster hover:bg-oxford-900 text-oxford-900 hover:text-white font-mono text-xs uppercase tracking-wider border border-stoneborder transition">
+                        Copy Study Notes
+                    </button>
+                    <button onclick="closeGuideModal()" class="bg-crimson-700 hover:bg-oxford-900 text-white font-mono text-xs uppercase tracking-wider font-semibold px-5 py-2 transition">
+                        Close Reader
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TOAST NOTIFICATION BANNER                  -->
+    <!-- ========================================== -->
+    <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden bg-oxford-900 border-l-4 border-crimson-700 text-white px-5 py-3.5 shadow-xl flex items-center gap-3 text-xs font-mono uppercase tracking-wider">
+        <i class="fa-solid fa-check text-amber-300"></i>
+        <span id="toastMessage">Copied to clipboard</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COLLEGIATE HMUN-STYLE FOOTER               -->
+    <!-- ========================================== -->
+    <footer class="bg-oxford-900 text-slate-300 border-t-4 border-crimson-700 pt-14 pb-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-oxford-800">
+                <!-- Col 1: Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-serif font-bold text-white text-xl tracking-tight">HMBSS Model UN</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Harold M. Brathwaite Secondary School Model United Nations &amp; BMUN. Cultivating diplomacy, debate, and global leadership in Brampton, Ontario.
+                    </p>
+                    <a href="https://www.instagram.com/hb_mun/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-white hover:text-amber-200">
+                        <i class="fa-brands fa-instagram text-sm"></i> @hb_mun
+                    </a>
+                </div>
+
+                <!-- Col 2: Directory -->
+                <div>
+                    <h4 class="font-mono font-semibold text-white text-xs uppercase tracking-widest mb-3">Site Directory</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><button onclick="navigateTo('home')" class="hover:text-white transition">Home &amp; Welcome</button></li>
+                        <li><button onclick="navigateTo('secretariat')" class="hover:text-white transition">The Secretariat (15 Execs)</button></li>
+                        <li><button onclick="navigateTo('bmun')" class="hover:text-white transition">Monday Lunch Meetings &amp; BMUN</button></li>
+                        <li><button onclick="navigateTo('training')" class="hover:text-white transition">8 Official Training Guides</button></li>
+                        <li><button onclick="navigateTo('contact')" class="hover:text-white transition">Join &amp; Contact</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Training Curriculum -->
+                <div>
+                    <h4 class="font-mono font-semibold text-white text-xs uppercase tracking-widest mb-3">Training Guides</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><button onclick="navigateTo('training'); openTrainingGuide('rop-101')" class="hover:text-white transition">Rules of Procedure 101</button></li>
+                        <li><button onclick="navigateTo('training'); openTrainingGuide('double-del')" class="hover:text-white transition">A Guide to the Double Del</button></li>
+                        <li><button onclick="navigateTo('training'); openTrainingGuide('speeches')" class="hover:text-white transition">Crafting Model UN Speeches</button></li>
+                        <li><button onclick="navigateTo('training'); openTrainingGuide('crisis-101')" class="hover:text-white transition">Introduction to Crisis Committees</button></li>
+                        <li><button onclick="navigateTo('training'); openTrainingGuide('resolutions')" class="hover:text-white transition">Research, Writing &amp; Resolutions</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Meeting Logistics -->
+                <div>
+                    <h4 class="font-mono font-semibold text-white text-xs uppercase tracking-widest mb-3">Weekly Meetings</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li><strong class="text-white">Every Monday During Lunch</strong></li>
+                        <li><strong class="text-white">Rooms 301 &amp; 302</strong></li>
+                        <li class="text-slate-400">Harold M. Brathwaite SS<br>415 Great Lakes Dr, Brampton, ON</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2 font-mono">
+                <p>© 2026–2027 HAROLD M. BRATHWAITE SECONDARY SCHOOL MODEL UNITED NATIONS.</p>
+                <p>HMBSS MUN &amp; BMUN SECRETARIAT</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- APPLICATION JAVASCRIPT & DATA              -->
+    <!-- ========================================== -->
+    <script>
+        // 1. OFFICIAL 15-MEMBER SECRETARIAT ROSTER
+        const secretariatData = [
+            {
+                name: "Samar",
+                role: "Secretary-General",
+                department: "Senior Secretariat",
+                instagram: "samar.m10",
+                instagramDisplay: "@samar.m10",
+                email: "marjara.samardeep@gmail.com",
+                bio: "Oversees all HMBSS Model UN club operations, external delegation participation, and the institutional direction of Brathwaite Model United Nations (BMUN)."
+            },
+            {
+                name: "Gurkhushi",
+                role: "Deputy Secretary-General",
+                department: "Senior Secretariat",
+                instagram: "gurkhushi_b",
+                instagramDisplay: "@gurkhushi_b",
+                email: "gurkhushi10@gmail.com",
+                bio: "Coordinates inter-departmental operations, supports weekly Monday lunch sessions in Rooms 301 & 302, and co-directs BMUN logistics."
+            },
+            {
+                name: "Armaan",
+                role: "Deputy Secretary-General",
+                department: "Senior Secretariat",
+                instagram: "armaan.grover1",
+                instagramDisplay: "@armaan.grover1",
+                email: "armaan.grover1@gmail.com",
+                bio: "Leads strategic conference planning, committee development, and executive coordination across all six HMBSS MUN departments."
+            },
+            {
+                name: "Eknoor",
+                role: "USG of Training",
+                department: "Training",
+                instagram: "eknoor.ch",
+                instagramDisplay: "@eknoor.ch",
+                email: "eknoorkc24@gmail.com",
+                bio: "Designs delegate training curricula, leads Monday lunch debate simulations, and mentors new and returning delegates."
+            },
+            {
+                name: "Yuvraj",
+                role: "USG of Training",
+                department: "Training",
+                instagram: "yuvrajpuri_8",
+                instagramDisplay: "@yuvrajpuri_8",
+                email: "yuvrajpuri0803@gmail.com",
+                bio: "Coaches public speaking, parliamentary procedure (RoP), and crisis committee strategy during weekly lunch sessions."
+            },
+            {
+                name: "Milan",
+                role: "USG of Training",
+                department: "Training",
+                instagram: "lazerbird9000",
+                instagramDisplay: "@lazerbird9000",
+                email: "mr.manand2020@gmail.com",
+                bio: "Develops official HMBSS MUN training guides, foreign policy research workshops, and resolution writing clinics."
+            },
+            {
+                name: "Prabhnoor",
+                role: "USG of Administration",
+                department: "Administration",
+                instagram: "pkbhav2025",
+                instagramDisplay: "@pkbhav2025",
+                email: "prabhnoor.birdi11@gmail.com",
+                bio: "Manages club membership rosters, attendance in Rooms 301 & 302, and school delegation registration logistics."
+            },
+            {
+                name: "Simar",
+                role: "USG of Administration",
+                department: "Administration",
+                instagram: "simarkk",
+                instagramDisplay: "@simarkk",
+                email: "simarkkang11@gmail.com",
+                bio: "Oversees internal communications, country/character matrix assignments, and administrative coordination for BMUN."
+            },
+            {
+                name: "Shivan",
+                role: "USG of Administration",
+                department: "Administration",
+                instagram: "Shivan011",
+                instagramDisplay: "@Shivan011",
+                email: "Shivanluthra642@gmail.com",
+                bio: "Handles logistical operations, permission forms, and resource scheduling for HMBSS delegates and conferences."
+            },
+            {
+                name: "Bani",
+                role: "USG of Marketing",
+                department: "Marketing",
+                instagram: "bani27",
+                instagramDisplay: "@bani27",
+                email: "banipahwa2011@gmail.com",
+                bio: "Directs visual branding, @hb_mun social media campaigns, and school-wide promotional outreach for HMBSS MUN."
+            },
+            {
+                name: "Saina",
+                role: "USG of Marketing",
+                department: "Marketing",
+                instagram: "sainahhh",
+                instagramDisplay: "@sainahhh",
+                email: "sainabhutani@gmail.com",
+                bio: "Creates digital media, photography, and conference graphics to showcase our delegates and BMUN announcements."
+            },
+            {
+                name: "Heshika",
+                role: "USG of Events",
+                department: "Events",
+                instagram: "heshikaa_v",
+                instagramDisplay: "@heshikaa_v",
+                email: "",
+                bio: "Spearheads BMUN event experience, conference scheduling, and special HMBSS MUN team initiatives."
+            },
+            {
+                name: "Dhiren",
+                role: "USG of Events",
+                department: "Events",
+                instagram: "parrot14380",
+                instagramDisplay: "@parrot14380",
+                email: "s.dhiren.on@gmail.com",
+                bio: "Coordinates venue setup, conference day operations, and hospitality for visiting delegations at BMUN."
+            },
+            {
+                name: "Nidhi",
+                role: "USG of Events",
+                department: "Events",
+                instagram: "nidii.xoxo",
+                instagramDisplay: "@nidii.xoxo",
+                email: "nidhihegde23@gmail.com",
+                bio: "Plans Opening & Closing Ceremonies, delegate socials, and on-site logistics for club and conference events."
+            },
+            {
+                name: "Vansh",
+                role: "USG of Equity",
+                department: "Equity",
+                instagram: "vansh.m27",
+                instagramDisplay: "@vansh.m27",
+                email: "vmanchanda2010@gmail.com",
+                bio: "Ensures an inclusive, respectful, and equitable environment across all weekly lunch debates and BMUN committee rooms."
+            }
+        ];
+
+        // 2. OFFICIAL 8 HMBSS TRAINING GUIDES
+        const trainingGuides = [
+            {
+                id: "rop-101",
+                number: "Guide 01",
+                title: "Rules of Procedure 101",
+                category: "Parliamentary Flow",
+                summary: "Master the step-by-step flow of debate: Roll Call, Speakers' List, Moderated & Unmoderated Caucuses, Points, Motions, and Voting Procedure.",
+                readTime: "6 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">Overview</h4>
+                            <p class="text-slate-700 text-sm">Rules of Procedure (RoP) are the parliamentary framework that governs every Model UN committee. Understanding RoP ensures you know exactly when and how to raise your placard to steer the debate.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">1. Roll Call & Setting the Agenda</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>"Present":</strong> You may abstain during substantive voting on resolutions.</li>
+                                <li><strong>"Present and Voting":</strong> You <em>cannot</em> abstain during final substantive votes; you must vote For or Against.</li>
+                                <li><strong>Setting the Agenda:</strong> In multi-topic committees, delegates motion to set the first topic to be debated.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">2. Primary / General Speakers' List (GSL)</h4>
+                            <p class="text-slate-700 text-sm mb-2">The default mode of debate. Delegates speak one by one for a set time (typically 60–90 seconds) on the general topic. If you have time remaining, you can <strong>Yield</strong> your time:</p>
+                            <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+                                <li><strong>Yield to the Chair:</strong> Ends your speech gracefully.</li>
+                                <li><strong>Yield to Questions (Points of Information):</strong> Allows other delegates to ask you questions.</li>
+                                <li><strong>Yield to Another Delegate:</strong> Gives your remaining speaking time to an ally.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">3. Moderated vs. Unmoderated Caucuses</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 border border-stoneborder">
+                                    <strong class="font-serif text-oxford-900 block mb-1">Moderated Caucus</strong>
+                                    <p class="text-xs text-slate-600">Formal sub-topic debate. Requires a <strong>Total Time</strong>, <strong>Individual Speaking Time</strong>, and a specific <strong>Topic</strong> (e.g., <em>"Motion for a 10-minute moderated caucus, 1-minute speaking time, on cyber-infrastructure security"</em>).</p>
+                                </div>
+                                <div class="bg-white p-4 border border-stoneborder">
+                                    <strong class="font-serif text-crimson-700 block mb-1">Unmoderated Caucus</strong>
+                                    <p class="text-xs text-slate-600">Informal lobbying! Delegates leave their seats to form blocs, negotiate compromises, and write Working Papers or Draft Resolutions together.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "history-mun",
+                number: "Guide 02",
+                title: "The UN & Model UN: A Brief History",
+                category: "Foundations",
+                summary: "Explore the origins of the United Nations in 1945, its 6 principal organs, the evolution of Model UN, and how committees operate today.",
+                readTime: "5 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">From League of Nations to the UN</h4>
+                            <p class="text-slate-700 text-sm">Following World War II in 1945, 51 founding member states signed the UN Charter in San Francisco to prevent future global conflict, replacing the earlier League of Nations.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">The 6 Principal Organs of the UN</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>General Assembly (GA):</strong> All 193 Member States with equal voting power (DISEC, ECOFIN, SOCHUM, SPECPOL, LEGAL).</li>
+                                <li><strong>Security Council (UNSC):</strong> 15 members (including the P5 veto powers: USA, UK, France, Russia, China) with binding authority.</li>
+                                <li><strong>Economic and Social Council (ECOSOC):</strong> Coordinates economic, social, and environmental agencies.</li>
+                                <li><strong>International Court of Justice (ICJ):</strong> The judicial arm located at The Hague.</li>
+                                <li><strong>The UN Secretariat:</strong> Headed by the Secretary-General.</li>
+                                <li><strong>Trusteeship Council:</strong> Inactive since 1994 after Palau gained independence.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">What Makes a Great HMBSS Delegate?</h4>
+                            <p class="text-slate-700 text-sm">Model UN is not about "winning an argument" by shouting the loudest—it is about <strong>diplomatic consensus</strong>, accurate representation of your assigned country's foreign policy, and crafting actionable solutions.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "double-del",
+                number: "Guide 03",
+                title: "A Guide to the Double Del",
+                category: "Team Strategy",
+                summary: "How to excel in General Assemblies and Specialized committees as a two-person delegation through seamless role-splitting and communication.",
+                readTime: "5 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">Why Double Del Matters</h4>
+                            <p class="text-slate-700 text-sm">In large General Assemblies, two delegates represent a single country together. When coordinated properly, a Double Del pairing can be twice as effective as a solo delegate—speaking in debate while simultaneously building blocs via notes.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">1. The "In-Room / Out-of-Room" & Role Split</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>During Moderated Caucuses:</strong> While Partner A delivers speeches and raises motions, Partner B writes notes to potential bloc allies, tracks sub-topics, and outlines clauses.</li>
+                                <li><strong>During Unmoderated Caucuses:</strong> One partner can anchor your main bloc's drafting table while the other partner lobbies undecided delegates or negotiates mergers with rival blocs.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">2. Balancing Speaking Time</h4>
+                            <p class="text-slate-700 text-sm">Chairs look for <strong>balanced participation</strong>! If one partner gives 90% of the speeches and the other stays silent, your pair will struggle to win Best Delegate. Alternate moderated caucuses or split the Opening Speech and Q&A.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "foreign-policy",
+                number: "Guide 04",
+                title: "Understanding Foreign Policy",
+                category: "Research & Realism",
+                summary: "How to research your country's national interests, historical alliances, UN voting records, and red lines so you never break character.",
+                readTime: "6 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">The Golden Rule of Diplomacy</h4>
+                            <p class="text-slate-700 text-sm">In Model UN, you do not represent your personal opinions—you represent the sovereign foreign policy of your assigned state or character.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">1. The 4 Pillars of Country Research</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>Geography & Economy:</strong> Who are your neighbours? What are your main exports, resources, and trade dependencies?</li>
+                                <li><strong>Regional Blocs & Alliances:</strong> Are you in NATO, the EU, ASEAN, the African Union, the Arab League, or the Non-Aligned Movement?</li>
+                                <li><strong>Past UN Actions:</strong> Has your country signed or ratified the key treaties mentioned in the Background Guide?</li>
+                                <li><strong>National Sovereignty Red Lines:</strong> Which clauses would your government never accept (e.g., foreign military intervention or sanctions)?</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">2. Reliable Research Sources</h4>
+                            <p class="text-slate-700 text-sm">Start with the conference <strong>Background Guide</strong>, then consult official Ministry of Foreign Affairs websites, the UN Digital Library (voting records), CIA World Factbook, and Reuters/BBC/Al Jazeera for current stances.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "speeches",
+                number: "Guide 05",
+                title: "Crafting Model UN Speeches",
+                category: "Rhetoric & Oratory",
+                summary: "Learn the Hook-Point-Action framework for 60-second Opening Speeches and rapid-fire Moderated Caucus interventions.",
+                readTime: "6 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">The 3-Part Speech Formula</h4>
+                            <p class="text-slate-700 text-sm">Whether you have 45 seconds or 90 seconds, every memorable Model UN speech follows a clear 3-part architecture: <strong>1. The Hook → 2. The Policy Point → 3. The Call to Action</strong>.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">1. The Hook (First 10 Seconds)</h4>
+                            <p class="text-slate-700 text-sm">Grab the Dais's attention immediately. Avoid wasting time with generic pleasantries. Instead, open with a striking statistic, a sharp rhetorical question, or a bold statement of your nation's stance.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">2. The Policy Point / Substance (Middle 30 Seconds)</h4>
+                            <p class="text-slate-700 text-sm">Address the specific sub-topic of the Moderated Caucus. Name a concrete mechanism, framework, or past precedent (e.g., <em>"Through our 3-pillar framework—Maritime Patrols, Port Digitization, and Regional Tribunals..."</em>).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">3. The Call to Action (Final 15 Seconds)</h4>
+                            <p class="text-slate-700 text-sm">Always end by inviting delegates to join your coalition or support your specific solution during the next unmoderated caucus.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "crisis-101",
+                number: "Guide 06",
+                title: "Introduction to Crisis Committees",
+                category: "Advanced / Crisis",
+                summary: "Navigate the dual-world of Crisis: Frontroom public directives vs. Backroom personal crisis notes, JCCs, and portfolio powers.",
+                readTime: "7 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">What is a Crisis Committee?</h4>
+                            <p class="text-slate-700 text-sm">Unlike General Assemblies where you represent an entire nation, in Crisis you usually represent a specific <strong>character</strong> (e.g., a Minister of Defence, intelligence chief, or historical figure) with unique <strong>Portfolio Powers</strong>.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 border border-stoneborder">
+                                <strong class="font-serif text-oxford-900 block mb-1">The Frontroom (Public)</strong>
+                                <p class="text-xs text-slate-600">The committee room itself. Delegates debate breaking <strong>Crisis Updates</strong> in moderated caucuses and pass short, action-oriented <strong>Public Directives</strong> as a cabinet.</p>
+                            </div>
+                            <div class="bg-white p-4 border border-stoneborder">
+                                <strong class="font-serif text-crimson-700 block mb-1">The Backroom (Covert)</strong>
+                                <p class="text-xs text-slate-600">Written via two paper notepad pads! You send secret <strong>Crisis Notes</strong> to the Crisis Director to execute personal goals and build a multi-step <strong>Crisis Arc</strong>.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">How to Write a Winning Crisis Note (WHO / WHAT / HOW / WHY)</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>Jurisdiction / Portfolio Power:</strong> Prove you actually have the authority and resources to carry out the action.</li>
+                                <li><strong>Specificity (How):</strong> Detail funding sources, covert channels, personnel, and contingency plans.</li>
+                                <li><strong>Goal (Why):</strong> Clearly state what outcome you want in the next Crisis Update.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "position-papers",
+                number: "Guide 07",
+                title: "Position Papers & Proper Citations",
+                category: "Pre-Conference Writing",
+                summary: "How to structure a gavel-ready 1-page Position Paper—Topic Background, Past Action, and Original Solutions—with proper citations.",
+                readTime: "6 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">Why Position Papers Are Essential</h4>
+                            <p class="text-slate-700 text-sm">Most conferences require a Position Paper to be eligible for awards (and many award a dedicated <em>Best Position Paper</em> gavel). It crystallizes your research before you even step into the room.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">The Classic 3-Paragraph Structure</h4>
+                            <ol class="list-decimal pl-5 space-y-2 text-slate-700 text-sm">
+                                <li><strong>Paragraph 1 — Topic Background & Framing (~20%):</strong> Define the crisis from your country's perspective, citing key statistics and why the issue is urgent.</li>
+                                <li><strong>Paragraph 2 — Past International & National Action (~30%):</strong> Highlight relevant UN resolutions, treaties, and domestic policies your government has enacted.</li>
+                                <li><strong>Paragraph 3 — Proposed Solutions (~50%):</strong> The most important section! Propose 2–3 specific, named, and actionable solutions your delegation will champion in committee.</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">Proper Citations & Academic Integrity</h4>
+                            <p class="text-slate-700 text-sm">Always include MLA, APA, or Chicago footnotes/bibliography as specified by the conference. Never plagiarize or use unverified sources.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "resolutions",
+                number: "Guide 08",
+                title: "Research, Writing & Resolutions",
+                category: "Legislative Drafting",
+                summary: "Turn ideas into legislation: Working Papers vs. Draft Resolutions, Preambulatory & Operative Clauses, Sponsors, and Amendments.",
+                readTime: "7 min read",
+                content: `
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 border border-stoneborder navy-rule-left">
+                            <h4 class="font-mono text-xs uppercase tracking-widest text-crimson-700 font-semibold mb-1">The Legislative Pipeline</h4>
+                            <p class="text-slate-700 text-sm">In General Assemblies, all debate builds toward passing a comprehensive <strong>Resolution</strong>. Ideas start as informal <em>Working Papers</em>, become formal <em>Draft Resolutions</em> with Sponsors and Signatories, and become <em>Resolutions</em> once voted through.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 border border-stoneborder">
+                                <strong class="font-serif text-oxford-900 block mb-1">Preambulatory Clauses</strong>
+                                <p class="text-xs text-slate-600">State the context, past UN resolutions, and reasons why the committee is acting. Start with an <em>italicized</em> participle (e.g., <em>Recalling, Alarmed by, Recognizing</em>) and end with a <strong>comma (,)</strong>.</p>
+                            </div>
+                            <div class="bg-white p-4 border border-stoneborder">
+                                <strong class="font-serif text-crimson-700 block mb-1">Operative Clauses</strong>
+                                <p class="text-xs text-slate-600">The actual actions and mechanisms! Numbered (1, 2, 3...), start with an <u>underlined</u> active verb (e.g., <u>Establishes</u>, <u>Calls upon</u>, <u>Recommends</u>), and end with a <strong>semicolon (;)</strong>.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-oxford-900 text-lg mb-2">Sponsors vs. Signatories & Amendments</h4>
+                            <ul class="list-disc pl-5 space-y-1.5 text-slate-700 text-sm">
+                                <li><strong>Sponsors:</strong> Primary authors of the Draft Resolution who strongly support its passage.</li>
+                                <li><strong>Signatories:</strong> Delegates who sign on simply to see the resolution debated on the floor.</li>
+                                <li><strong>Friendly vs. Unfriendly Amendments:</strong> Changes approved by all Sponsors are <em>Friendly</em>; changes opposed by any Sponsor require a committee vote (<em>Unfriendly</em>).</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        // 3. RULES OF PROCEDURE (RoP) CHEAT SHEET DATA
+        const ropData = [
+            {
+                name: "Point of Personal Privilege",
+                purpose: "Used when physical discomfort impairs your ability to participate (e.g., cannot hear the speaker, room temperature).",
+                interrupt: "Yes (if audibility)",
+                vote: "None (Chair rules)"
+            },
+            {
+                name: "Point of Order",
+                purpose: "Raised when a delegate or the Chair makes a procedural error in the Rules of Procedure.",
+                interrupt: "No",
+                vote: "None (Chair rules)"
+            },
+            {
+                name: "Point of Parliamentary Inquiry",
+                purpose: "Ask the Chair a question regarding the Rules of Procedure or the current flow of debate.",
+                interrupt: "No",
+                vote: "None (Chair answers)"
+            },
+            {
+                name: "Motion to Open Debate / Set Agenda",
+                purpose: "Opens the committee floor for debate and establishes the primary topic.",
+                interrupt: "No",
+                vote: "Simple Majority"
+            },
+            {
+                name: "Motion for a Moderated Caucus",
+                purpose: "Moves into timed sub-topic speeches. Must specify Total Time, Speaking Time, and Topic.",
+                interrupt: "No",
+                vote: "Simple Majority"
+            },
+            {
+                name: "Motion for an Unmoderated Caucus",
+                purpose: "Suspends formal rules for a set time so delegates can move freely, form blocs, and write clauses.",
+                interrupt: "No",
+                vote: "Simple Majority"
+            },
+            {
+                name: "Motion to Introduce Draft Resolution",
+                purpose: "Brings an approved Draft Resolution to the floor so Sponsors can read and present it.",
+                interrupt: "No",
+                vote: "Simple Majority"
+            },
+            {
+                name: "Motion to Close Debate (Move to Voting)",
+                purpose: "Ends all debate on the topic and moves the committee directly into substantive Voting Procedure.",
+                interrupt: "No",
+                vote: "2/3 Majority"
+            }
+        ];
+
+        // 4. FAQ DATA (Updated: Monday Lunch in Rooms 301 & 302, No Room Split)
+        const faqData = [
+            {
+                q: "When and where does HMBSS Model UN meet?",
+                a: "We meet every Monday during lunch in Rooms 301 and 302 at Harold M. Brathwaite Secondary School. Feel free to bring your lunch and join us!"
+            },
+            {
+                q: "Do I need prior Model UN or debate experience to join?",
+                a: "Not at all! HMBSS MUN welcomes students from all grades (9–12) and experience levels. Our USG of Training team (Eknoor, Yuvraj, and Milan) runs step-by-step workshops during Monday lunch and provides 8 comprehensive training guides right on this website."
+            },
+            {
+                q: "When is BMUN (Brathwaite Model United Nations)?",
+                a: "Official dates and committee background guides for BMUN are currently To Be Decided (TBD). Follow @hb_mun on Instagram or use the Contact Dispatch form on this page to get notified as soon as dates are announced."
+            },
+            {
+                q: "What is the dress code for Model UN?",
+                a: "Conferences follow 'Western Business Attire' (suit jacket/blazer, dress shirt, dress pants/skirt, tie optional, and formal closed-toe shoes). For regular Monday lunchtime meetings in Rooms 301 & 302, regular school attire is worn."
+            },
+            {
+                q: "Can I compete with a friend as a Double Delegate?",
+                a: "Yes! Many General Assembly committees allow Double Delegations (two students representing one country together). Check out our 'Guide to the Double Del' in the Delegate Training page to learn how to coordinate effectively."
+            }
+        ];
+
+        // ==========================================
+        // STATE & ROUTING FUNCTIONS
+        // ==========================================
+        let currentDeptFilter = 'ALL';
+        let activeGuideId = null;
+
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            const target = document.getElementById(`page-${pageId}`);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update desktop nav styling
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.nav === pageId) {
+                    btn.className = "nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-semibold transition text-oxford-900 border-b-2 border-crimson-700";
+                } else {
+                    btn.className = "nav-btn px-4 py-2 text-xs font-mono uppercase tracking-widest font-medium text-slate-600 hover:text-oxford-900 border-b-2 border-transparent transition";
+                }
+            });
+
+            // Update mobile nav styling
+            document.querySelectorAll('[data-nav-mobile]').forEach(btn => {
+                if (btn.dataset.navMobile === pageId) {
+                    btn.className = "w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-semibold flex items-center justify-between bg-alabaster text-oxford-900 border-l-4 border-crimson-700";
+                } else {
+                    btn.className = "w-full text-left px-3 py-3 text-xs font-mono uppercase tracking-widest font-medium flex items-center justify-between text-slate-700 hover:bg-alabaster";
+                }
+            });
+
+            history.replaceState(null, null, `#${pageId}`);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+        }
+
+        // ==========================================
+        // RENDER SECRETARIAT DIRECTORY
+        // ==========================================
+        function filterSecretariat(dept) {
+            currentDeptFilter = dept;
+            document.querySelectorAll('.dept-pill').forEach(btn => {
+                if (btn.dataset.dept === dept) {
+                    btn.className = "dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-semibold bg-oxford-900 text-white transition";
+                } else {
+                    btn.className = "dept-pill px-3.5 py-2 font-mono text-xs uppercase tracking-wider font-medium bg-alabaster text-slate-700 hover:text-oxford-900 border border-stoneborder transition";
+                }
+            });
+            renderSecretariat();
+        }
+
+        function renderSecretariat() {
+            const grid = document.getElementById('secretariatGrid');
+            const query = (document.getElementById('execSearchInput')?.value || '').toLowerCase().trim();
+
+            const filtered = secretariatData.filter(member => {
+                const matchesDept = currentDeptFilter === 'ALL' || member.department === currentDeptFilter;
+                const matchesQuery = !query ||
+                    member.name.toLowerCase().includes(query) ||
+                    member.role.toLowerCase().includes(query) ||
+                    member.department.toLowerCase().includes(query) ||
+                    member.instagram.toLowerCase().includes(query) ||
+                    member.email.toLowerCase().includes(query);
+                return matchesDept && matchesQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full editorial-card p-10 text-center">
+                        <p class="font-serif text-oxford-900 font-bold text-lg">No Secretariat members match your search.</p>
+                        <button onclick="document.getElementById('execSearchInput').value=''; filterSecretariat('ALL');" class="mt-4 px-4 py-2 bg-oxford-900 text-white font-mono text-xs uppercase tracking-wider">
+                            Reset Directory
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(member => {
+                const initials = member.name.slice(0, 2).toUpperCase();
+                const emailSection = member.email ? `
+                    <div class="flex items-center gap-2">
+                        <a href="mailto:${member.email}?subject=HMBSS%20MUN%20Inquiry%20for%20${encodeURIComponent(member.name)}" class="flex-1 px-3 py-2 bg-ivory hover:bg-oxford-900 text-oxford-900 hover:text-white border border-stoneborder text-xs font-mono flex items-center justify-center gap-1.5 transition truncate" title="${member.email}">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span class="truncate">${member.email}</span>
+                        </a>
+                        <button onclick="copyText('${member.email}', 'Copied ${member.name}\\'s email')" class="px-3 py-2 bg-ivory hover:bg-crimson-700 text-oxford-900 hover:text-white border border-stoneborder transition" title="Copy Email Address">
+                            <i class="fa-regular fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                ` : `
+                    <a href="https://www.instagram.com/${member.instagram}/" target="_blank" rel="noopener noreferrer" class="w-full px-3 py-2 bg-ivory hover:bg-oxford-900 text-oxford-900 hover:text-white border border-stoneborder text-xs font-mono flex items-center justify-center gap-1.5 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Contact via ${member.instagramDisplay}</span>
+                    </a>
+                `;
+
+                return `
+                    <div class="editorial-card p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between gap-3 pb-4 mb-4 border-b border-stoneborder">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 bg-oxford-900 text-white flex items-center justify-center font-serif font-bold text-base shrink-0">
+                                        ${initials}
+                                    </div>
+                                    <div>
+                                        <h3 class="font-serif font-bold text-xl text-oxford-900">${member.name}</h3>
+                                        <p class="font-mono text-[11px] uppercase tracking-wider font-semibold text-crimson-700">${member.role}</p>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider bg-alabaster text-slate-700 border border-stoneborder">
+                                    ${member.department}
+                                </span>
+                            </div>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                                ${member.bio}
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-stoneborder space-y-2.5">
+                            <div class="flex items-center justify-between text-xs font-mono">
+                                <span class="text-slate-500 uppercase">Instagram:</span>
+                                <a href="https://www.instagram.com/${member.instagram}/" target="_blank" rel="noopener noreferrer" class="text-oxford-900 hover:text-crimson-700 hover:underline font-semibold">
+                                    ${member.instagramDisplay}
+                                </a>
+                            </div>
+                            ${emailSection}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ==========================================
+        // RENDER TRAINING GUIDES & MODAL
+        // ==========================================
+        function renderTrainingGuides() {
+            const container = document.getElementById('trainingGuidesGrid');
+            container.innerHTML = trainingGuides.map(guide => `
+                <div onclick="openTrainingGuide('${guide.id}')" class="editorial-card p-6 flex flex-col justify-between cursor-pointer group double-rule-top">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-crimson-700">
+                                ${guide.number}
+                            </span>
+                            <span class="font-mono text-[11px] text-slate-400">${guide.readTime}</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-oxford-900 group-hover:text-crimson-700 transition mb-2">
+                            ${guide.title}
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-5">
+                            ${guide.summary}
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-stoneborder flex items-center justify-between font-mono text-[11px] uppercase tracking-wider font-semibold text-oxford-900 group-hover:text-crimson-700 transition">
+                        <span>Read Module</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openTrainingGuide(guideId) {
+            const guide = trainingGuides.find(g => g.id === guideId);
+            if (!guide) return;
+            activeGuideId = guideId;
+            document.getElementById('modalGuideBadge').textContent = `${guide.number} • ${guide.category}`;
+            document.getElementById('modalGuideTitle').textContent = guide.title;
+            document.getElementById('modalGuideBody').innerHTML = guide.content;
+            document.getElementById('guideModal').classList.remove('hidden');
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').classList.add('hidden');
+        }
+
+        function copyCurrentGuideNotes() {
+            const guide = trainingGuides.find(g => g.id === activeGuideId);
+            if (!guide) return;
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = guide.content;
+            const cleanText = `HMBSS MUN TRAINING GUIDE: ${guide.title.toUpperCase()}\n\n${guide.summary}\n\n${tempDiv.innerText.trim()}`;
+            copyText(cleanText, `Copied "${guide.title}" study notes`);
+        }
+
+        // ==========================================
+        // RENDER RoP TABLE & PRACTICE TIMER
+        // ==========================================
+        function filterRoPTable() {
+            const query = (document.getElementById('ropSearchInput')?.value || '').toLowerCase().trim();
+            const tbody = document.getElementById('ropTableBody');
+            const filtered = ropData.filter(item =>
+                item.name.toLowerCase().includes(query) ||
+                item.purpose.toLowerCase().includes(query)
+            );
+
+            tbody.innerHTML = filtered.map(item => `
+                <tr class="hover:bg-ivory transition">
+                    <td class="py-3.5 px-3 font-serif font-bold text-oxford-900">${item.name}</td>
+                    <td class="py-3.5 px-3 text-slate-600 text-xs leading-relaxed">${item.purpose}</td>
+                    <td class="py-3.5 px-3 text-center">
+                        <span class="px-2 py-0.5 font-mono text-[11px] font-semibold ${item.interrupt.startsWith('Yes') ? 'bg-brass-100 text-brass-600 border border-brass-500/30' : 'bg-alabaster text-slate-600'}">
+                            ${item.interrupt}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-3 text-center font-mono text-xs font-semibold text-crimson-700">${item.vote}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Practice Speech Timer Logic
+        let timerTotalSeconds = 60;
+        let timerRemaining = 60;
+        let timerInterval = null;
+
+        function formatTime(sec) {
+            const m = String(Math.floor(sec / 60)).padStart(2, '0');
+            const s = String(sec % 60).padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function setTimerPreset(seconds, label) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerTotalSeconds = seconds;
+            timerRemaining = seconds;
+            document.getElementById('timerDisplay').textContent = formatTime(seconds);
+            document.getElementById('timerStatusLabel').textContent = `Ready • ${label}`;
+            document.getElementById('timerStartBtn').innerHTML = `<i class="fa-solid fa-play text-[10px]"></i><span>Start</span>`;
+        }
+
+        function toggleTimer() {
+            const btn = document.getElementById('timerStartBtn');
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                btn.innerHTML = `<i class="fa-solid fa-play text-[10px]"></i><span>Resume</span>`;
+                document.getElementById('timerStatusLabel').textContent = "Paused";
+            } else {
+                if (timerRemaining <= 0) timerRemaining = timerTotalSeconds;
+                btn.innerHTML = `<i class="fa-solid fa-pause text-[10px]"></i><span>Pause</span>`;
+                document.getElementById('timerStatusLabel').textContent = "Floor Open • Speaking...";
+                timerInterval = setInterval(() => {
+                    timerRemaining--;
+                    document.getElementById('timerDisplay').textContent = formatTime(timerRemaining);
+                    if (timerRemaining === 10) {
+                        document.getElementById('timerStatusLabel').textContent = "10 Seconds Remaining (Gavel Tap)";
+                    }
+                    if (timerRemaining <= 0) {
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                        document.getElementById('timerStatusLabel').textContent = "Time Elapsed • Please Yield";
+                        btn.innerHTML = `<i class="fa-solid fa-rotate-right text-[10px]"></i><span>Restart</span>`;
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            setTimerPreset(timerTotalSeconds, `${timerTotalSeconds}s Speaking Time`);
+        }
+
+        // ==========================================
+        // RENDER FAQ & CONTACT FORM DISPATCH
+        // ==========================================
+        function renderFAQs() {
+            const container = document.getElementById('faqContainer');
+            container.innerHTML = faqData.map((item, idx) => `
+                <div class="bg-white border border-stoneborder">
+                    <button onclick="toggleFAQ(${idx})" class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-ivory transition">
+                        <span class="font-serif font-bold text-oxford-900 text-sm sm:text-base">${item.q}</span>
+                        <i id="faqIcon-${idx}" class="fa-solid fa-chevron-down text-crimson-700 text-xs transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqAns-${idx}" class="hidden px-5 pb-4 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-stoneborder pt-3 bg-ivory">
+                        ${item.a}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleFAQ(idx) {
+            const ans = document.getElementById(`faqAns-${idx}`);
+            const icon = document.getElementById(`faqIcon-${idx}`);
+            ans.classList.toggle('hidden');
+            icon.style.transform = ans.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function updateRecipientPreview() {
+            const select = document.getElementById('targetDeptSelect');
+            const emails = select.value.split(',');
+            const preview = document.getElementById('recipientPreviewText');
+            preview.textContent = emails.length > 1 ? `${emails[0]} (+${emails.length - 1})` : emails[0];
+        }
+
+        function copySelectedDeptEmails() {
+            const select = document.getElementById('targetDeptSelect');
+            copyText(select.value, 'Copied department emails');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value.trim();
+            const senderEmail = document.getElementById('senderEmail').value.trim();
+            const recipients = document.getElementById('targetDeptSelect').value;
+            const subject = document.getElementById('inquirySubject').value;
+            const message = document.getElementById('senderMessage').value.trim();
+
+            const fullSubject = `[HMBSS MUN] ${subject} — ${name}`;
+            const fullBody = `Hello HMBSS MUN Secretariat,\n\n${message}\n\nBest regards,\n${name}\nEmail: ${senderEmail}`;
+
+            window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(fullBody)}`;
+            showToast("Opening email client");
+        }
+
+        // ==========================================
+        // CLIPBOARD & TOAST UTILITIES
+        // ==========================================
+        function copyText(text, message) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(message || 'Copied to clipboard');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastBanner');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Initialize Website on Load
+        window.onload = function() {
+            renderSecretariat();
+            renderTrainingGuides();
+            filterRoPTable();
+            renderFAQs();
+
+            const hash = window.location.hash.replace('#', '');
+            const validPages = ['home', 'secretariat', 'bmun', 'training', 'contact'];
+            if (validPages.includes(hash)) {
+                navigateTo(hash);
+            }
+        };
+    </script>
+</body>
+</html>
